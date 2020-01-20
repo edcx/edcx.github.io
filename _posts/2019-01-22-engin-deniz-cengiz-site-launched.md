@@ -4,4 +4,4 @@ title: "Engin Deniz Cengiz, Launches Site"
 date: 2019-01-22
 ---
 
-Hello! This is the initial post!
+Yeah,  know this was a long time ago.
