@@ -8,6 +8,13 @@ layout: default
 
 <div class="edcx"></div>
 
-<p>Hi! I'm Engin Deniz Cengiz, a software engineer and a hobbyist game developer. 
-Sometimes I draw some sketches. Sometimes I work on games. Currently working on a match 3 game hopefully you will see the progress here :)</p>
-<p>I usually use C++ and C# to do the things. C++, when I feel like I would like to do more things myself. C# is with Unity.<p>
+<p>
+Hi! I'm Engin Deniz Cengiz, a software engineer with variety of application development skills.
+Mostly on C++, C#, Qt and Unity3D. I like learning and studying.
+</p>
+
+<p>
+Nowadays, I am doing client development, creating SDKs. I also have an interest in game development.
+So, I try creating games or tools as well.
+</p>
+
