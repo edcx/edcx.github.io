@@ -28,16 +28,16 @@ So, I try creating games or tools as well.
   {% for app in site.data.apps %}
   <article class="app-card">
     <a class="app-card__art" href="{{ app.url }}">
-      <img src="{{ app.logo }}" alt="{{ app.title }} logo" width="640" height="590" loading="lazy">
+      <img src="{{ app.logo }}" alt="{{ app.title | escape }} logo" width="640" height="590" loading="lazy">
     </a>
     <div class="app-card__body">
-      <h3 class="app-card__title"><a href="{{ app.url }}">{{ app.title }}</a></h3>
-      <p class="app-card__tagline">{{ app.tagline }}</p>
+      <h3 class="app-card__title"><a href="{{ app.url }}">{{ app.title | escape }}</a></h3>
+      <p class="app-card__tagline">{{ app.tagline | escape }}</p>
       <p class="app-card__meta">
-        {% if app.status %}<span class="tag">{{ app.status }}</span>{% endif %}
-        <span class="app-card__platforms">{{ app.platforms }}</span>
+        {% if app.status %}<span class="tag">{{ app.status | escape }}</span>{% endif %}
+        <span class="app-card__platforms">{{ app.platforms | escape }}</span>
       </p>
-      <p class="app-card__more"><a href="{{ app.url }}">More about {{ app.title }} &rarr;</a></p>
+      <p class="app-card__more"><a href="{{ app.url }}">More about {{ app.title | escape }} &rarr;</a></p>
     </div>
   </article>
   {% endfor %}

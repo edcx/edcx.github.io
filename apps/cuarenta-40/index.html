@@ -10,12 +10,12 @@ layout: default
 
   <img class="app-page__logo" src="{{ app.logo }}" alt="Cuarenta 40 logo" width="640" height="590">
 
-  <h1>{{ app.title }}</h1>
-  <p class="app-page__tagline">{{ app.tagline }}</p>
+  <h1>{{ app.title | escape }}</h1>
+  <p class="app-page__tagline">{{ app.tagline | escape }}</p>
 
   <p class="app-card__meta">
-    {% if app.status %}<span class="tag">{{ app.status }}</span>{% endif %}
-    <span class="app-card__platforms">{{ app.platforms }}</span>
+    {% if app.status %}<span class="tag">{{ app.status | escape }}</span>{% endif %}
+    <span class="app-card__platforms">{{ app.platforms | escape }}</span>
   </p>
 
   <div class="intro">
