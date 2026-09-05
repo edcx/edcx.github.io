@@ -3,9 +3,28 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% assign page_desc = page.description | default: site.description | strip_newlines | strip %}
+		{% assign share_image = "/assets/social/og-image.png" | absolute_url %}
+
 		<title>{{ page.title }}</title>
-		<meta name="description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
+		<meta name="description" content="{{ page_desc }}">
 		<meta name="theme-color" content="#1B1F29">
+		<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+		<meta property="og:type" content="{% if page.url == '/' %}profile{% else %}website{% endif %}">
+		<meta property="og:site_name" content="Engin Deniz Cengiz">
+		<meta property="og:title" content="{{ page.title }}">
+		<meta property="og:description" content="{{ page_desc }}">
+		<meta property="og:url" content="{{ page.url | absolute_url }}">
+		<meta property="og:image" content="{{ share_image }}">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta property="og:image:alt" content="Engin Deniz Cengiz, Senior Software Engineer">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="{{ page.title }}">
+		<meta name="twitter:description" content="{{ page_desc }}">
+		<meta name="twitter:image" content="{{ share_image }}">
 
 		<link rel="icon" href="/favicon.ico" sizes="any">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,6 +37,24 @@
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
 	<body>
+{% if page.url == '/' %}
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Person",
+		  "name": "Engin Deniz Cengiz",
+		  "jobTitle": "Senior Software Engineer",
+		  "url": "{{ '/' | absolute_url }}",
+		  "image": "{{ share_image }}",
+		  "description": "{{ site.description | strip_newlines | strip }}",
+		  "knowsAbout": ["Client SDKs", "C++", "C#", "Unity", "React Native", "Game development"],
+		  "sameAs": [
+		    "https://github.com/edcx",
+		    "https://www.linkedin.com/in/engindenizcengiz"
+		  ]
+		}
+		</script>
+{% endif %}
 		<div class="page">
 
 			<nav class="nav">
