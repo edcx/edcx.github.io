@@ -22,7 +22,7 @@ name: Engin Deniz Cengiz
 title: Engin Deniz Cengiz
 #email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Engin Deniz Cengiz — software engineer. Client development, SDKs, and games.
+  Engin Deniz Cengiz — senior software engineer. Client SDKs, Unity and C++, and games.
   Maker of Cuarenta 40, a mobile card game.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://edcx.github.io" # the base hostname & protocol for your site
