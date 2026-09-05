@@ -29,10 +29,10 @@
      * that brass is the one pairing on the page that is actually complementary:
      * a cool violet and a warm gold, each making the other look more like
      * itself. Swap this one value to retune the whole site. */
-    --accent: #C77DFF;
-    --accent-strong: #D79BFF;
-    --accent-wash: rgba(199, 125, 255, .13);
-    --accent-edge: rgba(199, 125, 255, .38);
+    --accent: #A78BFA;
+    --accent-strong: #BFA6FF;
+    --accent-wash: rgba(167, 139, 250, .13);
+    --accent-edge: rgba(167, 139, 250, .38);
 
     --measure: 40rem;
 }
