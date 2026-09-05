@@ -14,13 +14,22 @@
 :root {
     color-scheme: dark;
 
-    --bg: #131216;
-    --rule: #2B2932;
+    /* A blue-slate ground rather than a neutral black. It is a colour, not an
+     * absence of one, and it throws the app card's warm ivory forward. */
+    --bg: #1B1F29;
+    --rule: #313745;
 
-    --text: #EFEDEA;      /* headings, the name */
-    --prose: #D3D0CB;     /* body copy, softened so long text is not glaring */
-    --muted: #98948E;
-    --dim: #6E6A66;
+    --text: #ECEEF2;      /* the name, headings */
+    --prose: #C6CBD4;     /* body copy, softened so long text is not glaring */
+    --muted: #8B919D;
+    --dim: #656B77;
+
+    /* The site's accent, and the site's alone — the app card carries its
+     * product's brass instead, which is why the two never meet. */
+    --accent: #F2557D;
+    --accent-strong: #FF6B8F;
+    --accent-wash: rgba(242, 85, 125, .13);
+    --accent-edge: rgba(242, 85, 125, .34);
 
     --measure: 40rem;
 }
@@ -54,12 +63,19 @@ a {
 }
 
 a:hover {
-    color: var(--text);
+    color: var(--accent-strong);
     text-decoration-color: currentColor;
 }
 
+/* Prose links carry the accent standing still; chrome links only on hover. */
+.intro a,
+.app-page__note a {
+    color: var(--accent);
+    text-decoration-color: var(--accent-edge);
+}
+
 :focus-visible {
-    outline: 2px solid #C89044;
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 2px;
 }
@@ -81,7 +97,11 @@ a:hover {
 }
 
 .nav a:hover {
-    color: var(--text);
+    color: var(--accent-strong);
+}
+
+.nav a.is-current {
+    color: var(--accent);
 }
 
 /* Masthead ---------------------------------------------------------------
@@ -102,25 +122,26 @@ a:hover {
     height: 96px;
     background: url("/assets/edcx.png") center / contain no-repeat;
     border-radius: 50%;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .11);
+    box-shadow: inset 0 0 0 1.5px var(--accent-edge);
 }
 
 .name {
     margin: 0;
-    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-    font-size: 2.15rem;
-    font-weight: 400;
-    line-height: 1.08;
-    letter-spacing: .005em;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.021em;
     color: var(--text);
 }
 
 .role {
     margin: 8px 0 0;
     font-size: .72rem;
+    font-weight: 500;
     letter-spacing: .15em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--accent);
 }
 
 /* Prose ------------------------------------------------------------------ */
@@ -139,6 +160,9 @@ a:hover {
 }
 
 .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin: 60px 0 20px;
     font-size: .72rem;
     font-weight: 500;
@@ -147,12 +171,21 @@ a:hover {
     color: var(--muted);
 }
 
+.section-title::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--accent);
+}
+
 h1 {
     margin: 0 0 24px;
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-size: 2.15rem;
-    font-weight: 400;
-    line-height: 1.1;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -.021em;
     color: var(--text);
 }
 
@@ -261,11 +294,11 @@ h1 {
     margin: 14px 0 0;
     font-size: .88rem;
     font-weight: 500;
-    color: var(--brass);
+    color: var(--brass-deep);
 }
 
 .app-card:hover .app-card__more {
-    color: var(--brass-deep);
+    color: #63410F;
 }
 
 .app-card__more span {
@@ -367,7 +400,7 @@ h1 {
 }
 
 .footer a:hover {
-    color: var(--text);
+    color: var(--accent-strong);
 }
 
 /* Narrow ----------------------------------------------------------------- */
