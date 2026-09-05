@@ -33,6 +33,7 @@
     --accent-strong: #BFA6FF;
     --accent-wash: rgba(167, 139, 250, .13);
     --accent-edge: rgba(167, 139, 250, .38);
+    --accent-glow: rgba(167, 139, 250, .5);
 
     --measure: 40rem;
 }
@@ -193,27 +194,26 @@ h1 {
 }
 
 /* Apps -------------------------------------------------------------------
- * Product colours live inside this block. See the note at the top. */
+ * The listing card is the site's own surface, not the product's. Cuarenta's
+ * ivory and brass belong on Cuarenta's page, where the whole screen is that
+ * product's; in a list meant to hold other apps, a card wearing one product's
+ * colours reads as an advert pasted onto someone else's site. So the card is
+ * dark at rest and lights up under the cursor.
+ *
+ * The logo tile keeps a light ground either way — that mark is dark ink and
+ * navy on transparent, and there is nowhere else for it to sit. */
 
 .app-card {
-    --paper: #F4F1EA;
-    --paper-top: #FBF9F4;
-    --paper-edge: #DCD5C5;
-    --card-ink: #23262E;
-    --card-muted: #5E5A52;
-    --brass: #A9762F;
-    --brass-deep: #7D551F;
-
     position: relative;
     display: flex;
     align-items: center;
     gap: 22px;
     padding: 22px;
-    background: linear-gradient(var(--paper-top), var(--paper));
-    border: 1px solid var(--paper-edge);
+    background: #1F2431;
+    border: 1px solid var(--rule);
     border-radius: 14px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 14px 34px -14px rgba(0, 0, 0, .7);
-    transition: transform .18s ease, box-shadow .18s ease;
+    transition: background .2s ease, border-color .2s ease,
+                transform .2s ease, box-shadow .2s ease;
 }
 
 .app-card + .app-card {
@@ -222,15 +222,18 @@ h1 {
 
 .app-card:hover,
 .app-card:focus-within {
+    background: #2C3446;
+    border-color: var(--accent);
     transform: translateY(-3px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .5), 0 22px 46px -16px rgba(0, 0, 0, .8);
+    box-shadow: 0 18px 38px -18px rgba(0, 0, 0, .85),
+                0 0 26px -8px var(--accent-glow);
 }
 
 .app-card__art {
     flex: 0 0 108px;
     padding: 12px;
-    background: #FFFDF8;
-    border: 1px solid var(--paper-edge);
+    background: linear-gradient(#FBF9F4, #F1EDE4);
+    border: 1px solid rgba(0, 0, 0, .3);
     border-radius: 10px;
 }
 
@@ -250,7 +253,7 @@ h1 {
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.25;
-    color: var(--card-ink);
+    color: var(--text);
 }
 
 .app-card__title a {
@@ -271,7 +274,8 @@ h1 {
     margin: 7px 0 12px;
     font-size: .94rem;
     line-height: 1.5;
-    color: var(--card-muted);
+    color: var(--muted);
+    transition: color .2s ease;
 }
 
 .app-card__meta {
@@ -280,15 +284,26 @@ h1 {
     gap: 12px;
     margin: 0;
     font-size: .8rem;
-    color: var(--card-muted);
+    color: var(--muted);
+    transition: color .2s ease;
+}
+
+/* The copy lights up with the card. Not only for the effect: --muted against
+ * the lit surface is under AA, so the text has to come up when the ground
+ * does — the lift is roughly double the resting luminance. */
+.app-card:hover .app-card__tagline,
+.app-card:focus-within .app-card__tagline,
+.app-card:hover .app-card__meta,
+.app-card:focus-within .app-card__meta {
+    color: var(--prose);
 }
 
 .tag {
     padding: 3px 10px;
-    border: 1px solid rgba(169, 118, 47, .45);
+    border: 1px solid var(--accent-edge);
     border-radius: 999px;
-    background: rgba(169, 118, 47, .09);
-    color: var(--brass-deep);
+    background: var(--accent-wash);
+    color: var(--accent);
     letter-spacing: .04em;
     white-space: nowrap;
 }
@@ -297,11 +312,11 @@ h1 {
     margin: 14px 0 0;
     font-size: .88rem;
     font-weight: 500;
-    color: var(--brass-deep);
+    color: var(--accent);
 }
 
 .app-card:hover .app-card__more {
-    color: #63410F;
+    color: var(--accent-strong);
 }
 
 .app-card__more span {
