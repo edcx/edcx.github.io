@@ -33,8 +33,16 @@ body {
     width: 256px;
     height: 256px;
     margin: 0 auto;
-    margin-bottom: 60px;
+    margin-bottom: 28px;
     }
+
+.name {
+    margin: 0 0 36px;
+    font-size: 1.5em;
+    font-weight: normal;
+    letter-spacing: .01em;
+    color: #23262E;
+}
 
 nav ul, footer ul {
     padding: 0px;
