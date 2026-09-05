@@ -1,0 +1,8 @@
+---
+# Front matter so the sitemap line follows site.url rather than being pinned
+# here — it stays correct if this ever moves to a custom domain.
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
