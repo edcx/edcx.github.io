@@ -66,15 +66,6 @@ footer {
     font-size: .8em;
 }
 
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.1em;
-}
-
-ul.posts li {
-    list-style: none;
-}
-
 /* Prose reads left-aligned; the page chrome around it stays centred. */
 .intro {
     max-width: 40rem;
