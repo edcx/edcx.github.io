@@ -1,9 +1,25 @@
 
+/* The page is authored light only. Declaring it stops a browser set to dark from
+ * auto-darkening the text to near-invisible over a background that was never set. */
+:root {
+    color-scheme: light;
+}
+
 body {
+    background: #fff;
+    color: #333;
     margin: 40px auto;
     width: 70%;
+    max-width: 860px;
     font-family: 'Roboto', sans-serif;
     text-align:center
+}
+
+@media (max-width: 640px) {
+    body {
+        width: auto;
+        margin: 24px 20px;
+    }
 }
 
 .container {
@@ -42,7 +58,7 @@ h1 {
 }
 p {
     font-size: 1.1em;
-    line-height: 1.1em;
+    line-height: 1.6;
     color: #333;
 }
 footer {
@@ -57,4 +73,179 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+
+/* Prose reads left-aligned; the page chrome around it stays centred. */
+.intro {
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.section-title {
+    margin-top: 64px;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: .8em;
+    color: #999;
+}
+
+/* Apps
+ * The Ivory Club palette below belongs to Cuarenta 40 and is deliberately kept
+ * inside the card — the rest of the site stays neutral so a second app can bring
+ * its own colours. */
+.app-card {
+    --paper: #F4F1EA;
+    --surface: #FFFDF8;
+    --edge: #DCD5C5;
+    --ink: #23262E;
+    --brass: #A9762F;
+    --brass-deep: #7D551F;
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    max-width: 40rem;
+    margin: 0 auto 24px;
+    padding: 28px 32px;
+    text-align: left;
+    background: var(--paper);
+    border: 1px solid var(--edge);
+    border-radius: 14px;
+}
+
+.app-card__art {
+    flex: 0 0 132px;
+    display: block;
+    padding: 14px;
+    background: var(--surface);
+    border: 1px solid var(--edge);
+    border-radius: 10px;
+}
+
+.app-card__art img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.app-card__body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.app-card__title {
+    margin: 0;
+    font-size: 1.35em;
+}
+
+.app-card__title a {
+    color: var(--ink);
+}
+
+.app-card__title a:hover {
+    color: var(--brass-deep);
+}
+
+.app-card__tagline {
+    margin: 8px 0 14px;
+    font-size: 1em;
+    color: #4a4a4a;
+}
+
+.app-card__meta {
+    margin: 0;
+    font-size: .85em;
+    color: #6b6b6b;
+}
+
+.tag {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 3px 10px;
+    border: 1px solid rgba(169, 118, 47, 0.45);
+    border-radius: 999px;
+    background: rgba(169, 118, 47, 0.08);
+    color: var(--brass-deep);
+    font-size: .92em;
+    letter-spacing: .04em;
+}
+
+.app-card__more {
+    margin: 16px 0 0;
+    font-size: .95em;
+}
+
+.app-card__more a {
+    color: var(--brass);
+    font-weight: bold;
+}
+
+.app-card__more a:hover {
+    color: var(--brass-deep);
+}
+
+@media (max-width: 640px) {
+    .app-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px;
+    }
+
+    .app-card__art {
+        flex: 0 0 auto;
+        width: 132px;
+    }
+}
+
+/* App detail page */
+.app-page__logo {
+    display: block;
+    width: 180px;
+    height: auto;
+    margin: 0 auto 24px;
+}
+
+.app-page h1 {
+    margin-bottom: 8px;
+    font-size: 2em;
+}
+
+.app-page__tagline {
+    margin: 0 auto 18px;
+    max-width: 34rem;
+    color: #555;
+}
+
+.app-page .app-card__meta {
+    margin-bottom: 40px;
+}
+
+.app-page__note {
+    max-width: 40rem;
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid #e5e5e5;
+    font-size: .95em;
+    color: #666;
+}
+
+.app-page__links {
+    margin-top: 40px;
+}
+
+.button {
+    display: inline-block;
+    margin: 0 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #A9762F;
+    color: #FFFDF8;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #7D551F;
+    color: #FFFDF8;
 }

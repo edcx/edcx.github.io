@@ -1,0 +1,52 @@
+---
+title: Cuarenta 40 - Engin Deniz Cengiz
+description: Cuarenta 40 — a mobile version of Ecuador's national card game, in development for iOS and Android.
+layout: default
+---
+
+{% assign app = site.data.apps | where: "slug", "cuarenta-40" | first %}
+
+<article class="app-page">
+
+  <img class="app-page__logo" src="{{ app.logo }}" alt="Cuarenta 40 logo" width="640" height="590">
+
+  <h1>{{ app.title }}</h1>
+  <p class="app-page__tagline">{{ app.tagline }}</p>
+
+  <p class="app-card__meta">
+    {% if app.status %}<span class="tag">{{ app.status }}</span>{% endif %}
+    <span class="app-card__platforms">{{ app.platforms }}</span>
+  </p>
+
+  <div class="intro">
+
+    <p>
+      Cuarenta is Ecuador's national card game: a 40-card deck, points for
+      <em>caídas</em> and <em>limpias</em>, and a race to forty. It's a game people
+      learn at home rather than from a rulebook, and it's usually played across a table
+      with family.
+    </p>
+
+    <p>
+      This is a mobile version for the people who already know how to play. Private
+      tables with a room code, so a family spread across countries can sit down
+      together; Spanish first, English alongside it; and a deliberately quiet design —
+      warm paper, brass, and ink, with the cards as the brightest thing on screen.
+      No pay-to-win, no loot boxes.
+    </p>
+
+  </div>
+
+  {% if app.ios or app.android %}
+  <p class="app-page__links">
+    {% if app.ios %}<a class="button" href="{{ app.ios }}">App Store</a>{% endif %}
+    {% if app.android %}<a class="button" href="{{ app.android }}">Google Play</a>{% endif %}
+  </p>
+  {% else %}
+  <p class="app-page__note">
+    Not released yet. When it lands on the App Store and Google Play, the links will be here.
+    Questions in the meantime: <a href="mailto:engindeniz.cengiz@gmail.com">engindeniz.cengiz@gmail.com</a>.
+  </p>
+  {% endif %}
+
+</article>

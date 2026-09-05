@@ -1,0 +1,16 @@
+# One entry per app. The home page and /apps/ both read this list.
+# When a store listing goes live, fill in `ios` / `android` and drop `status`.
+
+- title: Cuarenta 40
+  slug: cuarenta-40
+  tagline: The Ecuadorian card game, for playing with family anywhere.
+  blurb: >-
+    Cuarenta is Ecuador's national card game — caídas, limpias, and a race to
+    forty. This is a mobile version built for people who already know the rules
+    and want a table with their family, wherever everyone happens to live.
+  platforms: iOS &amp; Android
+  status: In development
+  logo: /assets/apps/cuarenta-40-logo.png
+  url: /apps/cuarenta-40/
+  ios:
+  android:
