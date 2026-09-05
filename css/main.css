@@ -89,7 +89,7 @@ a:hover {
 .nav ul {
     display: flex;
     gap: 22px;
-    margin: 0 0 56px;
+    margin: 0 0 88px;
     padding: 0;
     list-style: none;
     font-size: .875rem;
@@ -394,31 +394,52 @@ h1 {
     color: #17140F;
 }
 
-/* Footer ----------------------------------------------------------------- */
+/* Profile links ---------------------------------------------------------
+ * These replace the footer. They are the same object as the app card, at a
+ * smaller size: dark at rest, lit with an accent border under the cursor. */
 
-.footer {
-    margin-top: 72px;
-    padding-top: 22px;
-    border-top: 1px solid var(--rule);
-}
-
-.footer ul {
+.links {
     display: flex;
     flex-wrap: wrap;
-    gap: 22px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: .85rem;
+    gap: 12px;
+    margin: 30px 0 0;
 }
 
-.footer a {
-    color: var(--muted);
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 17px;
+    background: #1F2431;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    color: var(--prose);
+    font-size: .88rem;
+    font-weight: 500;
     text-decoration: none;
+    transition: background .2s ease, border-color .2s ease, color .2s ease,
+                transform .2s ease, box-shadow .2s ease;
 }
 
-.footer a:hover {
-    color: var(--accent-strong);
+.link-button svg {
+    flex: 0 0 auto;
+    opacity: .8;
+    transition: opacity .2s ease;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+    background: #2C3446;
+    border-color: var(--accent);
+    color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px -14px rgba(0, 0, 0, .85),
+                0 0 20px -8px var(--accent-glow);
+}
+
+.link-button:hover svg,
+.link-button:focus-visible svg {
+    opacity: 1;
 }
 
 /* Narrow ----------------------------------------------------------------- */
@@ -426,6 +447,10 @@ h1 {
 @media (max-width: 560px) {
     body {
         padding: 36px 20px 52px;
+    }
+
+    .nav ul {
+        margin-bottom: 52px;
     }
 
     .masthead {
