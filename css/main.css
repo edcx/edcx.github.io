@@ -37,11 +37,22 @@ body {
     }
 
 .name {
-    margin: 0 0 36px;
-    font-size: 1.5em;
+    margin: 0 0 10px;
+    font-size: 1.6em;
     font-weight: normal;
     letter-spacing: .01em;
     color: #23262E;
+}
+
+/* The role, not a sentence in the bio — it answers "what is this person" before
+ * any prose does. Tracked tighter than .section-title so the two read as
+ * identity and divider rather than as the same element twice. */
+.role {
+    margin: 0 0 44px;
+    font-size: .8em;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #777;
 }
 
 nav ul, footer ul {
