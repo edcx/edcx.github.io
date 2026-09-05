@@ -8,7 +8,9 @@ layout: default
 
 <article class="app-page">
 
-  <img class="app-page__logo" src="{{ app.logo }}" alt="Cuarenta 40 logo" width="640" height="590">
+  <div class="app-page__logo">
+    <img src="{{ app.logo }}" alt="Cuarenta 40 logo" width="640" height="590">
+  </div>
 
   <h1>{{ app.title | escape }}</h1>
   <p class="app-page__tagline">{{ app.tagline | escape }}</p>
