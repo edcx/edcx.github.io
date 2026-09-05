@@ -25,11 +25,14 @@
     --dim: #656B77;
 
     /* The site's accent, and the site's alone — the app card carries its
-     * product's brass instead, which is why the two never meet. */
-    --accent: #F2557D;
-    --accent-strong: #FF6B8F;
-    --accent-wash: rgba(242, 85, 125, .13);
-    --accent-edge: rgba(242, 85, 125, .34);
+     * product's brass instead, which is why the two never meet. Purple against
+     * that brass is the one pairing on the page that is actually complementary:
+     * a cool violet and a warm gold, each making the other look more like
+     * itself. Swap this one value to retune the whole site. */
+    --accent: #C77DFF;
+    --accent-strong: #D79BFF;
+    --accent-wash: rgba(199, 125, 255, .13);
+    --accent-edge: rgba(199, 125, 255, .38);
 
     --measure: 40rem;
 }
