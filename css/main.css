@@ -148,6 +148,30 @@ a:hover {
     color: var(--accent);
 }
 
+/* Stack -----------------------------------------------------------------
+ * Deliberately neutral rather than accent-coloured: the accent already carries
+ * the role line, the nav's current item and the app tag, and six more purple
+ * chips would leave nothing on the page quieter than anything else. */
+
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 30px;
+    padding: 0;
+    list-style: none;
+}
+
+.stack li {
+    padding: 4px 12px;
+    background: #1F2431;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    font-size: .78rem;
+    letter-spacing: .02em;
+    color: var(--muted);
+}
+
 /* Prose ------------------------------------------------------------------ */
 
 .intro p {
