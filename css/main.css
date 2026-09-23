@@ -379,6 +379,40 @@ h1 {
     margin-bottom: 34px;
 }
 
+/* Screens keep the phone's own proportions and corners: a 55pt radius on a
+ * 402 x 874pt screen, given as a share of each side so it scales with the tile.
+ * The last one is a clip of play, the same size as the stills. */
+
+.app-page__media {
+    margin: 38px 0 0;
+}
+
+/* Two screens, each the width a third of the column would give it, so they
+ * stay a glance rather than filling the page. */
+.app-page__shots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    width: calc((100% - 28px) / 3 * 2 + 14px);
+}
+
+.app-page__shots img,
+.app-page__shots video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 13.7% / 6.3%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .3),
+                0 14px 30px -16px rgba(0, 0, 0, .8);
+}
+
+.app-page__media figcaption {
+    margin-top: 16px;
+    font-size: .88rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
 .app-page__note {
     margin: 38px 0 0;
     padding-top: 22px;
@@ -491,6 +525,11 @@ h1 {
     .app-card__art {
         flex: 0 0 auto;
         width: 108px;
+    }
+
+    .app-page__shots {
+        width: auto;
+        gap: 12px;
     }
 }
 
