@@ -224,8 +224,8 @@ h1 {
  * colours reads as an advert pasted onto someone else's site. So the card is
  * dark at rest and lights up under the cursor.
  *
- * The logo tile keeps a light ground either way — that mark is dark ink and
- * navy on transparent, and there is nowhere else for it to sit. */
+ * The logo is the app's own icon, opaque and full-bleed, so it needs no
+ * tile of its own — only the rounded corners a home screen would give it. */
 
 .app-card {
     position: relative;
@@ -254,17 +254,16 @@ h1 {
 }
 
 .app-card__art {
-    flex: 0 0 108px;
-    padding: 12px;
-    background: linear-gradient(#FBF9F4, #F1EDE4);
-    border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
+    flex: 0 0 96px;
 }
 
 .app-card__art img {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 22%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .3),
+                0 10px 22px -12px rgba(0, 0, 0, .8);
 }
 
 .app-card__body {
@@ -353,23 +352,20 @@ h1 {
 }
 
 /* App detail page --------------------------------------------------------
- * The Cuarenta logo is dark ink and navy on transparent — it was drawn for
- * paper and disappears on this background, so it keeps a paper tile under it. */
+ * The logo is the app icon, shown the way a phone shows it: rounded, lifted
+ * off the page, and carrying its own ground. */
 
 .app-page__logo {
-    display: inline-block;
-    padding: 22px 26px;
     margin-bottom: 28px;
-    background: linear-gradient(#FBF9F4, #F4F1EA);
-    border: 1px solid #DCD5C5;
-    border-radius: 14px;
-    box-shadow: 0 14px 34px -16px rgba(0, 0, 0, .7);
 }
 
 .app-page__logo img {
     display: block;
     width: 132px;
     height: auto;
+    border-radius: 22%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .3),
+                0 14px 34px -16px rgba(0, 0, 0, .7);
 }
 
 .app-page__tagline {
