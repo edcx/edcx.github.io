@@ -60,6 +60,7 @@
 			<nav class="nav">
 				<ul>
 					<li><a href="/"{% if page.url == "/" %} class="is-current"{% endif %}>Home</a></li>
+					<li><a href="/experience/"{% if page.url contains "/experience/" %} class="is-current"{% endif %}>Experience</a></li>
 					<li><a href="/apps/"{% if page.url contains "/apps/" %} class="is-current"{% endif %}>Apps &amp; Games</a></li>
 				</ul>
 			</nav>

@@ -1,0 +1,45 @@
+# One entry per role, newest first. The /experience/ page reads this list.
+# Leave `to` empty for the current role; it shows as "now" and gets the lit dot.
+
+- org: King
+  parent: Microsoft Xbox
+  role: Senior Software Engineer
+  place: Barcelona, Spain
+  from: 2023
+  to:
+  summary: >-
+    I work with game teams on payments and inventory operations, designing the
+    solutions and leading their development.
+
+- org: Vuforia
+  parent: PTC
+  role: Software Engineer
+  place: Vienna, Austria
+  from: 2019
+  to: 2022
+  summary: >-
+    Vuforia Engine is an augmented reality SDK used by more than a million
+    developers. I delivered SDK migrations, new features and improvements, and
+    worked with external teams and partners on the launch of the Magic Leap 2
+    headset.
+
+- org: Kuartis
+  role: Software Engineer
+  place: Ankara, Turkey
+  from: 2016
+  to: 2019
+  summary: >-
+    A startup that grew from 10 to 50 people while I was there. I worked across
+    the whole stack: backend services and web apps, a C++ and Qt tool for
+    annotating video to train machine learning models, and an Android VR app for
+    watching live football.
+
+- org: Reo-Tek
+  role: Software Engineer
+  place: Ankara, Turkey
+  from: 2015
+  to: 2016
+  summary: >-
+    I built an interactive animal ecosystem simulation in Unity. Flocks moved
+    using steering behaviours and A* pathfinding, and editor tools let curators
+    tune how the animals behaved without touching code.

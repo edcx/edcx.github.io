@@ -1,0 +1,38 @@
+---
+title: Experience - Engin Deniz Cengiz
+description: The roles and education of Engin Deniz Cengiz, a senior software engineer who builds client SDKs and games.
+layout: default
+---
+
+<h1>Experience</h1>
+
+<ol class="timeline">
+  {% for job in site.data.experience %}
+  <li class="timeline__item{% unless job.to %} is-current{% endunless %}">
+    <div class="timeline__head">
+      <h3 class="timeline__org">{{ job.org | escape }}{% if job.parent %} <span>({{ job.parent | escape }})</span>{% endif %}</h3>
+      <p class="timeline__when">{{ job.from }} &ndash; {{ job.to | default: "now" }}</p>
+    </div>
+    <p class="timeline__role">{{ job.role | escape }} &middot; {{ job.place | escape }}</p>
+    <p class="timeline__summary">{{ job.summary | escape }}</p>
+  </li>
+  {% endfor %}
+</ol>
+
+<section class="education">
+  <h2 class="section-title">Education</h2>
+
+  <div class="timeline">
+    <div class="timeline__item">
+      <div class="timeline__head">
+        <h3 class="timeline__org">Middle East Technical University</h3>
+        <p class="timeline__when">2015</p>
+      </div>
+      <p class="timeline__role">BSc Computer Engineering &middot; Ankara, Turkey</p>
+      <p class="timeline__summary">
+        I organised engineering conferences, game jams and hackathons with the student
+        societies, including IEEE.
+      </p>
+    </div>
+  </div>
+</section>
